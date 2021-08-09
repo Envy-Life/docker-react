@@ -3,11 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  - docker build -t envy/docker-react -f Dockerfile.dev .
 
 script:
   
-  - export CI=true && docker run stephengrider/docker-react npm test
+  - docker run -e CI=true envy/docker-react npm test
 
 # deploy:
 #   provider: elasticbeanstalk
