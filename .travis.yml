@@ -9,15 +9,15 @@ script:
   
   - docker run -e CI=true envy/docker-react npm test
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-west-2"
-#   app: "docker"
-#   env: "Docker-env"
-#   bucket_name: "elasticbeanstalk-us-west-2-306476627547"
-#   bucket_path: "docker"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-539700659758"
+  bucket_path: "docker-react"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
